@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ресторан і страви</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="blob b1" aria-hidden="true"></div>
+  <div class="blob b2" aria-hidden="true"></div>
+  <div class="blob b3" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <header class="hero">
+      <h1>Прибуток страв ресторану</h1>
+      <p>Прототипне наслідування: об'єкти <code>Страва</code> успадковують властивості об'єкта <code>Ресторан</code>.</p>
+    </header>
+
+    <form id="form" class="glass" novalidate>
+      <fieldset>
+        <legend>1. Ресторан (базовий об'єкт)</legend>
+        <div class="grid g3">
+          <div class="field">
+            <label for="r-name">Назва ресторану <b>*</b></label>
+            <input id="r-name" type="text" autocomplete="off">
+            <small class="err" data-for="r-name" role="alert"></small>
+          </div>
+          <div class="field">
+            <label for="r-address">Адреса <b>*</b></label>
+            <input id="r-address" type="text" autocomplete="off">
+            <small class="err" data-for="r-address" role="alert"></small>
+          </div>
+          <div class="field">
+            <label for="r-cuisine">Тип кухні <b>*</b></label>
+            <input id="r-cuisine" type="text" autocomplete="off">
+            <small class="err" data-for="r-cuisine" role="alert"></small>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Страви (5 об'єктів класу Страва)</legend>
+        <div id="dishes" class="dishes"></div>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit" class="btn primary">Розрахувати</button>
+        <button type="button" id="fill" class="btn">Заповнити прикладом</button>
+        <button type="reset" class="btn">Очистити</button>
+      </div>
+    </form>
+
+    <section id="result" class="glass" hidden aria-live="polite">
+      <h2>Страва з найбільшим прибутком</h2>
+      <div id="winner" class="winner"></div>
+
+      <h3>Перевірка успадкування (<code>hasOwnProperty</code>)</h3>
+      <div id="own-check" class="check"></div>
+
+      <h3>Ланцюжок прототипів</h3>
+      <p class="hint">Також виведено в консоль браузера (F12).</p>
+      <div id="chain" class="chain"></div>
+
+      <h3>Усі страви</h3>
+      <div class="table-wrap">
+        <table id="table">
+          <thead>
+            <tr><th>Назва</th><th>Собівартість</th><th>Ціна</th><th>Порцій</th><th>Прибуток</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
